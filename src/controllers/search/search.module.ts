@@ -2,20 +2,19 @@ import { Module } from '@nestjs/common';
 import { ProductsService } from '../../services/products.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Products } from '../../models/products.entity';
-import { ProductsController } from './products.controller';
 import { ProducerService } from 'src/kafka/producer/producer.service';
 import { CategoriesService } from 'src/services/categories.service';
+import { SearchController } from './search.controller';
 
 @Module({
-  imports: [ 
+  imports: [
     TypeOrmModule.forFeature([Products]),
     TypeOrmModule.forFeature([Products], 'products_query'),
   ],
-  controllers: [ProductsController],
+  controllers: [SearchController],
   providers: [
-    ProductsService, 
-    CategoriesService, 
-    ProducerService],
+    ProductsService,
+    CategoriesService,
+  ],
 })
-export class ProductsModule { } 
- 
+export class SearchModule { }

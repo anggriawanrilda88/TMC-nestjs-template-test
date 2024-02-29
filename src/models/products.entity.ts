@@ -16,7 +16,7 @@ export class Products {
   id: string;
 
   @Index("IDX_products_category_id")
-  @Column({ name: "category_id" })
+  @Column({ name: "category_id", type: 'uuid' })
   categoryId: string;
 
   @Column({ unique: true })
@@ -26,8 +26,8 @@ export class Products {
   name: string;
 
   @Column()
-  price: number; 
- 
+  price: number;
+
   @Column()
   stock: number;
 
@@ -35,8 +35,8 @@ export class Products {
   @CreateDateColumn({ name: "created_at", type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)" })
   createdAt: Date;
 
-  @OneToOne(() => Categories, { cascade: true })
-  @JoinColumn({ name: 'categoryId' })
+  @ManyToOne(() => Categories, (Categories) => Categories.id)
+  @JoinColumn({ name: 'category_id' })
   category: Categories;
 
   constructor(entity: Partial<Products>) {

@@ -7,6 +7,7 @@ import { ProductsModule } from './controllers/products/products.module';
 import { IsUniqueConstraint } from './shared/is.unique.constrain';
 import { KafkaModule } from './kafka/kafka.module';
 import { CategoriesModule } from './controllers/categories/categories.module';
+import { SearchModule } from './controllers/search/search.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { CategoriesModule } from './controllers/categories/categories.module';
     DBModule,
     CategoriesModule,
     ProductsModule,
-    KafkaModule
+    SearchModule,
+    // KafkaModule
   ],
   controllers: [],
   providers: [
