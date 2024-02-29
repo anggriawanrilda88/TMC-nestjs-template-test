@@ -1,1 +1,0 @@
-# TMC-nestjs-template-test
