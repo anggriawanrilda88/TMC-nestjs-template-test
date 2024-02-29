@@ -1,4 +1,3 @@
-import { Categories } from 'src/categories/entities/categories.entity';
 import {
   Column,
   CreateDateColumn,
@@ -9,6 +8,7 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { Categories } from './categories.entity';
 
 @Entity()
 export class Products {

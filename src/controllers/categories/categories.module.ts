@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { CategoriesService } from './categories.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Categories } from './entities/categories.entity';
 import { CategoriesController } from './categories.controller';
 import { ProducerService } from 'src/kafka/producer/producer.service';
+import { CategoriesService } from 'src/services/categories.service';
+import { Categories } from 'src/models/categories.entity';
 
 @Module({
   imports: [ 

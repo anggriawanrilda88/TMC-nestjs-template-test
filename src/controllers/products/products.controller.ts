@@ -5,10 +5,10 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-import { ProductsService } from './products.service';
+import { ProductsService } from '../../services/products.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { ProducerService } from 'src/kafka/producer/producer.service';
-import { CategoriesService } from 'src/categories/categories.service';
+import { CategoriesService } from 'src/services/categories.service';
 
 @Controller('api/products')
 export class ProductsController {

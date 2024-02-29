@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { CreateProductDto } from './dto/create-product.dto';
+import { CreateProductDto } from '../controllers/products/dto/create-product.dto';
 import { EntityManager } from 'typeorm';
-import { Products } from './entities/products.entity';
+import { Products } from '../models/products.entity';
 import { InjectEntityManager } from '@nestjs/typeorm';
 
 @Injectable()

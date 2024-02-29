@@ -5,9 +5,9 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-import { CategoriesService } from './categories.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { ProducerService } from 'src/kafka/producer/producer.service';
+import { CategoriesService } from 'src/services/categories.service';
 
 @Controller('api/categories')
 export class CategoriesController {

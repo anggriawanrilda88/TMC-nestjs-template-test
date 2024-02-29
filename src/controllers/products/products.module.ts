@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { ProductsService } from './products.service';
+import { ProductsService } from '../../services/products.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Products } from './entities/products.entity';
+import { Products } from '../../models/products.entity';
 import { ProductsController } from './products.controller';
 import { ProducerService } from 'src/kafka/producer/producer.service';
-import { CategoriesService } from 'src/categories/categories.service';
+import { CategoriesService } from 'src/services/categories.service';
 
 @Module({
   imports: [ 

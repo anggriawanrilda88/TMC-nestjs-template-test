@@ -1,19 +1,19 @@
 import { ConfigService } from '@nestjs/config';
 import { config } from 'dotenv';
+import { Categories } from 'src/models/categories.entity';
 import { DataSource } from 'typeorm';
-import { Categories } from './src/categories/entities/categories.entity';
 
 config();
 
 const configService = new ConfigService();
 
 export default new DataSource({
-  type: 'mysql',
-  host: configService.getOrThrow('MYSQL_HOST'),
-  port: configService.getOrThrow('MYSQL_PORT'),
-  database: configService.getOrThrow('MYSQL_DATABASE'),
-  username: configService.getOrThrow('MYSQL_USERNAME'),
-  password: configService.getOrThrow('MYSQL_PASSWORD'),
+  type: 'postgres',
+  host: configService.getOrThrow('PG1_HOST'),
+  port: configService.getOrThrow('PG1_PORT'),
+  database: configService.getOrThrow('PG1_DATABASE'),
+  username: configService.getOrThrow('PG1_USERNAME'),
+  password: configService.getOrThrow('PG1_PASSWORD'),
   migrations: ['migrations/**'],
   entities: [Categories],
 });
