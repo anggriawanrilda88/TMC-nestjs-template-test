@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { DBModule } from './database/db.module';
 import { ProducerService } from './kafka/producer/producer.service';
@@ -8,6 +8,7 @@ import { IsUniqueConstraint } from './shared/is.unique.constrain';
 import { KafkaModule } from './kafka/kafka.module';
 import { CategoriesModule } from './controllers/categories/categories.module';
 import { SearchModule } from './controllers/search/search.module';
+import { simpleFunc } from './middleware/simple-logger.middleware';
 
 @Module({
   imports: [
@@ -27,4 +28,8 @@ import { SearchModule } from './controllers/search/search.module';
     IsUniqueConstraint
   ],
 })
-export class AppModule { }
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(simpleFunc).forRoutes('*');
+  }
+}
