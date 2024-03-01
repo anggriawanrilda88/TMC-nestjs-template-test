@@ -20,10 +20,14 @@ Nestjs template that have feature<br>
 
 # API List
 <ul>
-    <li>`
-        POST http://localhost:3000/api/categories
-    `</li>
-    <li>Migration Up database => `npm run typeorm:run-migrations`</li>
-    <li>Migration Down database => `npm run typeorm:revert-migrations`</li>
-    <li>Run development API with debug hot reload => `npm run start:dev`</li>
+    <li>POST http://localhost:3000/api/categories<br><pre>
+        curl --location 'http://localhost:3000/api/categories' \
+        --header 'Authorization: b1b65baf-9a95-4f45-b972-1bed0b29bfd3' \
+        --header 'Content-Type: application/json' \
+        --data '{
+            "name": "ddddd"
+        }'
+    </pre></li>
+    <li>POST http://localhost:3000/api/products</li>
+    <li>GET http://localhost:3000/api/search</li>
 </ul>
