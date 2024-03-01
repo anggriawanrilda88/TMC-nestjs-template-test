@@ -17,7 +17,7 @@ import { simpleFunc } from './middleware/simple-logger.middleware';
     CategoriesModule,
     ProductsModule,
     SearchModule,
-    // KafkaModule
+    KafkaModule
   ],
   controllers: [],
   providers: [

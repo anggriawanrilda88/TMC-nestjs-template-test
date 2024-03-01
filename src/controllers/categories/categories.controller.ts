@@ -6,8 +6,8 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { CreateCategoryDto } from './dto/create-category.dto';
-import { ProducerService } from 'src/kafka/producer/producer.service';
-import { CategoriesService } from 'src/services/categories.service';
+import { ProducerService } from '../../kafka/producer/producer.service';
+import { CategoriesService } from '../../services/categories.service';
 
 @Controller('api/categories')
 export class CategoriesController {

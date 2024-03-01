@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsString, MaxLength, Min } from "class-validator";
-import { IsUnique } from "src/shared/is.unique";
+import { IsUnique } from "../../../shared/is.unique";
 
 export class CreateProductDto {
   @IsNotEmpty()

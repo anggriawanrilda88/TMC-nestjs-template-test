@@ -7,8 +7,8 @@ import {
 } from '@nestjs/common';
 import { ProductsService } from '../../services/products.service';
 import { CreateProductDto } from './dto/create-product.dto';
-import { ProducerService } from 'src/kafka/producer/producer.service';
-import { CategoriesService } from 'src/services/categories.service';
+import { ProducerService } from '../../kafka/producer/producer.service';
+import { CategoriesService } from '../../services/categories.service';
 
 @Controller('api/products')
 export class ProductsController {
