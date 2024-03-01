@@ -101,6 +101,8 @@ export class ProductsService {
       queryBuilder.limit(perPage);
     }
 
+    queryBuilder.addOrderBy('products.created_at', 'DESC');
+
     return {
       data: await queryBuilder.getMany(),
       total: await count

@@ -8,7 +8,7 @@ export class CreateTableProducts1709246763614 implements MigrationInterface {
         this.logger.log('Up');
         await queryRunner.query(`
         CREATE TABLE "public"."products" ( 
-        	"id" UUid NOT NULL,
+        	"id" UUid DEFAULT uuid_generate_v4() NOT NULL,
         	"name" Character Varying NOT NULL,
         	"sku" Character Varying NOT NULL,
         	"price" Integer NOT NULL,
