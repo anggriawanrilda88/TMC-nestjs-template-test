@@ -8,6 +8,7 @@ Nestjs template that have feature<br>
     <li>Have migration feature</li>
     <li>Have unit testing example</li>
     <li>Have validation DTO</li>
+    <li>Have simple API Authorization middleware</li>
 </ul>
 
 # Quick Setup
